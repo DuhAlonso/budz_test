@@ -1,4 +1,5 @@
 import 'package:budz_test/src/features/initial/initial_page.dart';
+import 'package:budz_test/src/features/profile/profile_edit_page.dart';
 import 'package:budz_test/src/features/profile/profile_page.dart';
 import 'package:flutter/material.dart';
 
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: InitialPage(),
+      home: ProfileEditPage(),
     );
   }
 }
