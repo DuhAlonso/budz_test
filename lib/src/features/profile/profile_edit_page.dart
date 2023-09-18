@@ -1,6 +1,8 @@
 import 'dart:math';
 
 import 'package:budz_test/src/features/profile/widgets/form_field.dart';
+import 'package:budz_test/src/features/profile/widgets/menu_profile.dart';
+import 'package:budz_test/src/features/profile/widgets/modal_acount_delete.dart';
 import 'package:flutter/material.dart';
 
 class ProfileEditPage extends StatefulWidget {
@@ -85,7 +87,139 @@ class _ProfileEditPageState extends State<ProfileEditPage> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              showModalBottomSheet<void>(
+                                context: context,
+                                isScrollControlled: true,
+                                builder: (BuildContext context) {
+                                  return Wrap(
+                                    children: [
+                                      Container(
+                                        height: mediaQ.height / 3,
+                                        decoration: ShapeDecoration(
+                                          color: Colors.white,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.only(
+                                              topLeft: Radius.circular(24),
+                                              topRight: Radius.circular(24),
+                                            ),
+                                          ),
+                                        ),
+                                        child: Center(
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.end,
+                                            children: <Widget>[
+                                              Positioned(
+                                                  right: 16,
+                                                  top: 12,
+                                                  child: Container(
+                                                    width: 59,
+                                                    height: 59,
+                                                    child: Stack(
+                                                      children: [
+                                                        Positioned(
+                                                          left: 4,
+                                                          top: 4,
+                                                          child: Container(
+                                                            width: 50,
+                                                            height: 50,
+                                                            padding:
+                                                                const EdgeInsets
+                                                                    .all(4),
+                                                            clipBehavior:
+                                                                Clip.antiAlias,
+                                                            decoration:
+                                                                ShapeDecoration(
+                                                              color: Color(
+                                                                  0xFFF0F0F0),
+                                                              shape:
+                                                                  RoundedRectangleBorder(
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            100),
+                                                              ),
+                                                            ),
+                                                            child: Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .min,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .center,
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .end,
+                                                              children: [
+                                                                Container(
+                                                                  padding:
+                                                                      const EdgeInsets
+                                                                          .all(8),
+                                                                  child: Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .min,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .end,
+                                                                    crossAxisAlignment:
+                                                                        CrossAxisAlignment
+                                                                            .center,
+                                                                    children: [
+                                                                      Container(
+                                                                        width:
+                                                                            24,
+                                                                        height:
+                                                                            24,
+                                                                        child: Stack(
+                                                                            children: [
+                                                                              Icon(Icons.close)
+                                                                            ]),
+                                                                      ),
+                                                                    ],
+                                                                  ),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  )),
+                                              SizedBox(
+                                                height: 16,
+                                              ),
+                                              MenuProfile(
+                                                nameMenu: "Tirar Foto",
+                                                icon: Icon(
+                                                    Icons.camera_alt_rounded),
+                                                topLeft: 16,
+                                                topRight: 16,
+                                                bottomLeft: 16,
+                                                bottomRight: 16,
+                                              ),
+                                              SizedBox(
+                                                height: 16,
+                                              ),
+                                              MenuProfile(
+                                                nameMenu: "Escolher Foto",
+                                                icon: Icon(
+                                                    Icons.photo_library_sharp),
+                                                topLeft: 16,
+                                                topRight: 16,
+                                                bottomLeft: 16,
+                                                bottomRight: 16,
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
+                            },
                             child: Text(
                               'ALTERAR FOTO',
                               textAlign: TextAlign.center,
@@ -181,7 +315,10 @@ class _ProfileEditPageState extends State<ProfileEditPage> {
             Align(
               alignment: Alignment.center,
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  //Navigator.push(context, MaterialPageRoute(builder: (context) =>));
+                  modalAcountDelete(context, mediaQ);
+                },
                 child: Text(
                   'Excluir Conta',
                   textAlign: TextAlign.center,
