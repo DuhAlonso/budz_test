@@ -1,3 +1,4 @@
+import 'package:budz_test/src/features/profile/profile_edit_page.dart';
 import 'package:budz_test/src/features/profile/widgets/menu_profile.dart';
 import 'package:flutter/material.dart';
 
@@ -68,20 +69,33 @@ class ProfilePage extends StatelessWidget {
                   children: [
                     MenuProfile(
                       nameMenu: 'Meus Pets',
-                      icon: Icon(Icons.logout),
+                      icon: ImageIcon(
+                          AssetImage('assets/test/icons/pets_24px.png')),
                       topLeft: 16,
                       topRight: 16,
                     ),
                     MenuProfile(
-                        nameMenu: 'Editar Perfil', icon: Icon(Icons.logout)),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ProfileEditPage()));
+                        },
+                        nameMenu: 'Editar Perfil',
+                        icon: ImageIcon(
+                            AssetImage('assets/test/icons/profile_24px.png'))),
                     MenuProfile(
-                        nameMenu: 'Ferramentas', icon: Icon(Icons.logout)),
+                        nameMenu: 'Ferramentas',
+                        icon: ImageIcon(
+                            AssetImage('assets/test/icons/clicker_24px.png'))),
                     MenuProfile(
                         nameMenu: 'Gerenciar Assinatura',
-                        icon: Icon(Icons.logout)),
+                        icon: ImageIcon(
+                            AssetImage('assets/test/icons/premium_24px.png'))),
                     MenuProfile(
                       nameMenu: 'Alterar Senha',
-                      icon: Icon(Icons.logout),
+                      icon: ImageIcon(
+                          AssetImage('assets/test/icons/lock_24px.png')),
                       bottomLeft: 16,
                       bottomRight: 16,
                     ),

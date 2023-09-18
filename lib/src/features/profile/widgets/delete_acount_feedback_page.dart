@@ -1,3 +1,4 @@
+import 'package:budz_test/src/features/profile/delete_success_page.dart';
 import 'package:flutter/material.dart';
 
 class DeleteAcountFeedbackPage extends StatefulWidget {
@@ -86,7 +87,12 @@ class _DeleteAcountFeedbackPageState extends State<DeleteAcountFeedbackPage> {
             Padding(
               padding: const EdgeInsets.only(left: 16, right: 16, bottom: 24),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => DeleteSuccessPage()));
+                },
                 child: Text(
                   'CONTINUAR',
                   textAlign: TextAlign.center,

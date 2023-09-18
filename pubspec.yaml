@@ -62,6 +62,13 @@ flutter:
   assets:
     - assets/test/profile_photo.png
     - assets/test/triste.png
+    - assets/test/so_long.png
+    - assets/test/logotype.png
+    - assets/test/icons/clicker_24px.png
+    - assets/test/icons/lock_24px.png
+    - assets/test/icons/pets_24px.png
+    - assets/test/icons/premium_24px.png
+    - assets/test/icons/profile_24px.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
