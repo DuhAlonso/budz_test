@@ -316,7 +316,6 @@ class _ProfileEditPageState extends State<ProfileEditPage> {
               alignment: Alignment.center,
               child: TextButton(
                 onPressed: () {
-                  //Navigator.push(context, MaterialPageRoute(builder: (context) =>));
                   modalAcountDelete(context, mediaQ);
                 },
                 child: Text(

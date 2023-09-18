@@ -1,3 +1,4 @@
+import 'package:budz_test/src/features/profile/widgets/delete_acount_feedback_page.dart';
 import 'package:flutter/material.dart';
 
 void modalAcountDelete(BuildContext context, Size size) {
@@ -118,7 +119,13 @@ void modalAcountDelete(BuildContext context, Size size) {
                     padding: const EdgeInsets.only(
                         left: 16, right: 16, bottom: 24, top: 24),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    DeleteAcountFeedbackPage()));
+                      },
                       child: Text(
                         'EXCLUIR CONTA',
                         textAlign: TextAlign.center,
